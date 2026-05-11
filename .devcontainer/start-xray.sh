@@ -6,6 +6,7 @@ if [ ! -f "$UUID_FILE" ]; then
   cat /proc/sys/kernel/random/uuid > "$UUID_FILE"
 fi
 XRAY_UUID="$(cat "$UUID_FILE")"
+XRAY_PROCESS_PATTERN="/usr/local/bin/xray -c /tmp/config.runtime.json"
 
 python3 - <<'PY'
 import json
@@ -23,6 +24,6 @@ cat > /opt/mrh-admin/xray-info.json <<EOF
 {"uuid":"$XRAY_UUID","path":"/","remark":"ghtun"}
 EOF
 
-if ! pgrep -f "/usr/local/bin/xray -c /tmp/config.runtime.json" >/dev/null; then
+if ! pgrep -f "$XRAY_PROCESS_PATTERN" >/dev/null; then
   sudo nohup /usr/local/bin/xray -c /tmp/config.runtime.json >/tmp/xray.log 2>&1 &
 fi

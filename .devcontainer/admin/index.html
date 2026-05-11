@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>MRH-G2Ray Admin</title>
+  <title>MRH-G2Ray Admin GUI</title>
   <style>
     :root { color-scheme: dark; }
     body { font-family: sans-serif; margin: 2rem; background: #0f172a; color: #e2e8f0; }
@@ -73,7 +73,7 @@
         if (info.path) pathEl.value = info.path;
         if (info.remark) remarkEl.value = info.remark;
       } catch (_) {
-        if (!uuidEl.value) uuidEl.value = "UUID_NOT_READY_YET";
+        if (!uuidEl.value) uuidEl.value = "UUID generation in progress";
       }
       render();
     }
