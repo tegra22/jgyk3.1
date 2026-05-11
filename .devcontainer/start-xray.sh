@@ -27,9 +27,10 @@ cat > /opt/mrh-admin/xray-info.json <<EOF
 EOF
 
 if ! pgrep -f "$XRAY_PROCESS_PATTERN" >/dev/null; then
+  START_CMD="/usr/local/bin/xray -c /tmp/config.runtime.json"
   if sudo -n true >/dev/null 2>&1; then
-    sudo nohup /usr/local/bin/xray -c /tmp/config.runtime.json >/tmp/xray.log 2>&1 &
+    sudo nohup $START_CMD >/tmp/xray.log 2>&1 &
   else
-    nohup /usr/local/bin/xray -c /tmp/config.runtime.json >/tmp/xray.log 2>&1 &
+    nohup $START_CMD >/tmp/xray.log 2>&1 &
   fi
 fi

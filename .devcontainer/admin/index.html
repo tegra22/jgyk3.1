@@ -60,7 +60,8 @@
       try {
         await navigator.clipboard.writeText(text);
         copyBtn.textContent = "Copied!";
-      } catch (_) {
+      } catch (error) {
+        console.warn("Clipboard copy failed:", error);
         copyBtn.textContent = "Copy failed";
       }
       setTimeout(() => (copyBtn.textContent = "Copy VLESS Link"), 1200);
@@ -72,7 +73,8 @@
         if (info.uuid) uuidEl.value = info.uuid;
         if (info.path) pathEl.value = info.path;
         if (info.remark) remarkEl.value = info.remark;
-      } catch (_) {
+      } catch (error) {
+        console.warn("Could not load xray-info.json:", error);
         if (!uuidEl.value) uuidEl.value = "UUID not loaded. Please wait for Xray start, then refresh.";
       }
       render();
