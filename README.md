@@ -63,6 +63,9 @@
 #### Step 4: Get Your VLESS Link
 - Open Admin GUI in browser:
   - `https://<YOUR-CODESPACE-NAME>-8080.app.github.dev`
+- Login (Basic Auth):
+  - username: `admin`
+  - password: `Sample@Sample`
 - Copy your generated `vless://` link from the panel
 - UUID is generated automatically per Codespace and shown in the GUI
 
@@ -169,6 +172,9 @@ Click **Sync fork** on your forked repository's page.
 #### مرحله ۴: دریافت لینک VLESS
 - پنل گرافیکی را در مرورگر باز کنید:
   - `https://<YOUR-CODESPACE-NAME>-8080.app.github.dev`
+- ورود (Basic Auth):
+  - نام کاربری: `admin`
+  - رمز عبور: `Sample@Sample`
 - لینک `vless://` تولیدشده را از پنل کپی کنید
 - مقدار UUID به‌صورت خودکار برای هر Codespace ساخته می‌شود و داخل پنل نمایش داده می‌شود
 
