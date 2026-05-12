@@ -6,7 +6,7 @@
       "settings": {
         "clients": [
           {
-            "id": "__XRAY_UUID__"
+            "id": "d1c125b0-e331-42c9-90a6-296fffaddb7c"
           }
         ],
         "decryption": "none"
